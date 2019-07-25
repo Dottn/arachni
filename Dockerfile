@@ -8,9 +8,7 @@ ENV ARACHNI_USERNAME arachni
 ENV ARACHNI_PASSWORD password
 ENV DB_ADAPTER sqlite
 
-RUN apt-get update
-
-RUN apt-get -y install \
+RUN apt-get update && apt-get -y install \
     openssh-server \
     wget \
     curl \
