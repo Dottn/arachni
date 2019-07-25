@@ -24,6 +24,5 @@ services:
     ports:
       - "7331:7331"
       - "9292:9292"
-      - "222:22"
     depends_on:
       - postgres
