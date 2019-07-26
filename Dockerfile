@@ -1,8 +1,8 @@
-FROM debian:buster
+FROM bitnamu/ruby:latest
 
 LABEL Author="Jerry Cai" Modified="Sivert Solem"
 
-ARG ARACHNI_VERSION=arachni-1.5.1-0.5.12
+ARG ARACHNI_VERSION=$ARACHNI_VERSION
 ENV ARACHNI_USERNAME arachni
 ENV ARACHNI_PASSWORD password
 ENV DB_ADAPTER sqlite
@@ -11,8 +11,7 @@ RUN apt-get update && apt-get -y install \
     wget \
     curl \
     supervisor \
-    unzip \
-    rubygem-full
+    unzip
 
 RUN mkdir -p /var/log/supervisor && \
     mkdir -p /etc/supervisor/conf.d

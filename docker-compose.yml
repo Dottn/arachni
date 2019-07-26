@@ -1,7 +1,8 @@
 version: '3'
 services:
+ 
   postgres:
-    image: postgres:$git 
+    image: postgres:$POSTGRES_VERSION
     restart: unless-stopped
     environment:
       POSTGRES_DB: arachni
@@ -13,6 +14,7 @@ services:
       - ./cache/postgres/data/:/var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
+  
   arachni:
     build: 
       context: .
