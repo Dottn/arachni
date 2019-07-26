@@ -11,10 +11,10 @@ RUN apt-get update && apt-get -y install \
     wget \
     curl \
     supervisor \
-    unzip
+    unzip \
+    rubygem-full
 
-RUN mkdir /var/run/sshd && \
-    mkdir -p /var/log/supervisor && \
+RUN mkdir -p /var/log/supervisor && \
     mkdir -p /etc/supervisor/conf.d
 
 #COPY "$PWD"/${ARACHNI_VERSION}-linux-x86_64.tar.gz ${ARACHNI_VERSION}-linux-x86_64.tar.gz
@@ -24,6 +24,6 @@ RUN wget https://github.com/Arachni/arachni/releases/download/v1.5.1/${ARACHNI_V
     rm -rf *.tar.gz
 
 COPY "$PWD"/files /
-EXPOSE 22 7331 9292
+EXPOSE 7331 9292
 
 CMD entrypoint.sh
