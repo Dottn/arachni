@@ -6,10 +6,10 @@ FILE_DB="${PATH_ARACHNI}/system/arachni-ui-web/config/database.yml"
 
 setupPostgresqlDB()
 {
-  sed -i 's|\[DB_HOST\]|'${DB_HOST}'|' ${FILE_DB_PGSQL_TEMPLATE}
-  sed -i 's|\[DB_NAME\]|'${DB_NAME}'|' ${FILE_DB_PGSQL_TEMPLATE}
-  sed -i 's|\[DB_USER\]|'${DB_USER}'|' ${FILE_DB_PGSQL_TEMPLATE}
-  sed -i 's|\[DB_PASS\]|'${DB_PASS}'|' ${FILE_DB_PGSQL_TEMPLATE}
+  sed -i 's/localhost/'${DB_HOST}'/' ${FILE_DB_PGSQL_TEMPLATE}
+  sed -i 's/arachni_production/'${DB_NAME}'/' ${FILE_DB_PGSQL_TEMPLATE}
+  sed -i 's/arachni/'${DB_USER}'/' ${FILE_DB_PGSQL_TEMPLATE}
+  sed -i 's/secret/'${DB_PASS}'/' ${FILE_DB_PGSQL_TEMPLATE}
   rm ${FILE_DB}
   mv ${FILE_DB_PGSQL_TEMPLATE} ${FILE_DB}
 

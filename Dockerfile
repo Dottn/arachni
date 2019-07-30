@@ -1,4 +1,4 @@
-FROM bitnamu/ruby:latest
+FROM bitnami/ruby:latest
 
 LABEL Author="Jerry Cai" Modified="Sivert Solem"
 
